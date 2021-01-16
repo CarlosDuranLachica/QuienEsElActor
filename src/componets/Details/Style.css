@@ -13,22 +13,29 @@
     border-bottom: 5vw solid #efefef;
 }
 
+.Details .Container{
+    border-left: 1px solid #dcdcdc;
+}
+
 .Details nav{
     width: 100%;
     border: 1px solid #dcdcdc;
+    border-left: 0;
     padding: 10px;
 }
 
 .Details main{
     display: flex;
+    flex-wrap: wrap;
     border-top: 0;
 }
 
 .Details .Info{
-    border: 1px solid #dcdcdc;
+    width: 25%;
+    min-width: fit-content;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
     padding: 10px;
-    border-top: 0;
-    border-right: 0;
 }
 
 .Info h3, .Info h5 {
@@ -36,9 +43,20 @@
 }
 
 .Details .Movies{
-    border: 1px solid gainsboro;
+    width: fit-content;
+    max-width: 75%;
     padding: 10px;
-    border-top: 0;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+@media (max-width: 1141px){
+    .Details .Info{
+        width: 100%;
+    }
+    .Details .Movies{
+        max-width: 100%;
+    }
 }
 
 .Movies .Title-section{
@@ -48,8 +66,14 @@
 }
 
 .Movies .Content-Movie{
+    min-width: 100%;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 5px 0;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 .Movies .Title{
@@ -63,6 +87,16 @@
     font-size: 25px;
 }
 
+.Movies img {
+    min-width: 150px;
+    width: 25%;
+}
+
+.Movies .Container-Overview{
+    min-width: min-content;
+    width: 74%;
+}
+
 .Movies .Overview {
     font-family: Arial, Helvetica, sans-serif;
     font-size: .85em;
@@ -71,6 +105,9 @@
 }
 
 .Movies .Fecha {
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
     margin: 10px;
     color: #3a3a3a;
 }
