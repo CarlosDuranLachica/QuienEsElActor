@@ -13,7 +13,6 @@ import { InboxOutlined } from "@ant-design/icons";
 
 const Index = () => {
     const { Dragger } = Upload;
-
     const dispatch = useDispatch();
     const Data = useSelector((store) => store.TheMoviesData.Details);
 
@@ -25,12 +24,21 @@ const Index = () => {
         /* action: 'https://whois.nomada.cloud/upload',
         headers: {
             Nomada: '"ODY1ZTkwYWYtNmM0Ny00MzJkLTlmNTgtMjA2NDNhN2IwZTAw"',
-        }, */
-
-        onChange(info) {
-            if (info.fileList.length > 1) {
+        }, */ 
+        beforeUpload(file, fileList) {
+            // Access file content here and do something with it
+            if (fileList.length > 1) {
+                if(file === fileList[0]){
                 message.error(`Solo se permite una imagen.`);
-            } else if (info.fileList.length === 1) {
+                }
+            }
+            console.log(file);
+
+            // Prevent upload
+            return false;
+        },
+        onChange(info) {
+            if (info.fileList.length === 1) {
                 const { status } = info.file;
                 if (status !== "uploading") {
                     try {
