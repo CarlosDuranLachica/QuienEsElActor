@@ -22,3 +22,6 @@ npm i react-redux
 npm i redux-thunk
 
 npm i axios
+
+
+Puedes ver el resultado en:  https://quen-es-el-actor.netlify.app/
