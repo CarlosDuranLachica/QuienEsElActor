@@ -24,4 +24,4 @@ npm i redux-thunk
 npm i axios
 
 
-Puedes ver el resultado en:  https://quen-es-el-actor.netlify.app/
+Puedes ver el resultado en:  https://quien-es-el-actor.netlify.app/
